@@ -2,9 +2,9 @@ name: Sorting Automation Test
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ ft/pipeline ]
   pull_request:
-    branches: [ main, master ]
+    branches: [ ft/pipeline ]
 
 jobs:
   test:
