@@ -25,7 +25,7 @@ jobs:
           distribution: 'temurin'   # Eclipse Temurin is a stable OpenJDK build
           java-version: '25'
 
-      # Cache Maven dependencies for faster builds.
+      # Cache Maven dependencies for faster builds..
       - name: Cache Maven packages
         uses: actions/cache@v4
         with:
