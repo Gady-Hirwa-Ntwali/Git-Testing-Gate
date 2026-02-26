@@ -17,11 +17,8 @@ public class SortToolsTest {
         Browser browser = playwright.chromium().launch(
                 new BrowserType.LaunchOptions().setHeadless(true)
         );
-        BrowserContext context = browser.newContext(
-                new Browser.NewContextOptions()
-                        .setHttpCredentials("admin", "admin")
-        );
-        Page page = context.newPage();
+
+        Page page = browser.newPage();
         page.navigate("https://practicesoftwaretesting.com/");
 
         //ascending order
