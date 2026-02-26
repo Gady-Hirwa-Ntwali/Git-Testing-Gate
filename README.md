@@ -26,6 +26,16 @@
    git checkout -b ft/setup
    Switched to a new branch 'ft/setup'
 6. Add a new file called test.java, include meaningful placeholder logic or comments, stage it, and commit using a well-structured commit message.
+   touch test.java
+   git add test.java
+   git commit -m "add java file called test"
+   git push --set-upstream origin ft/setup
+7. Modify files and temporarily save the changes using Git stash.
+   echo "modify the test" >> test.java
+   git stash
+8. Restore a specific stashed change using its stash index and confirm the changes are correctly reapplied.
+   git stash apply stash@{0}
+   
    
    
   
