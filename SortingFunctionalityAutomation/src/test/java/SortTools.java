@@ -4,6 +4,9 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
@@ -23,27 +26,34 @@ public class SortTools {
         Page page = context.newPage();
         page.navigate("https://practicesoftwaretesting.com/");
 
+        //ascending order
         Locator sortTools = page.locator("[data-test='sort']");
         sortTools.selectOption(new SelectOption().setValue("name,asc"));
         sortTools.click();
 
         page.waitForSelector(".card-body h5");
         Locator cardTitle = page.locator(".card-body h5");
-
         System.out.println("The total cards are: " + cardTitle.count());
-        cardTitle.nth(0).isVisible();
         page.waitForTimeout(4000);
-        String firstTool = cardTitle.nth(0).innerText();
-        System.out.println("The first one: " + firstTool);
-        char firstCharAsc = firstTool.charAt(0);
-        assertEquals("A", firstCharAsc);
+
+        List<String> toolNames = cardTitle.allInnerTexts();
+        System.out.println("All tools: " + toolNames);
+        List<String> sortedAsc = new ArrayList<>(toolNames);
+        Collections.sort(sortedAsc);
+        assertEquals(sortedAsc, toolNames);
         page.waitForTimeout(4000);
+
+        // descending order
         sortTools.selectOption(new SelectOption().setValue("name,desc"));
-        System.out.println("The total cards are: " + cardTitle.count());
-        cardTitle.nth(0).isVisible();
-
+        System.out.println("The total desc: " + cardTitle.count());
         page.waitForTimeout(4000);
-        System.out.println("The first one: " + cardTitle.nth(0).innerText());
+
+        List<String> toolDesc = cardTitle.allInnerTexts();
+        System.out.println("All tools: " + toolDesc);
+        List<String> sortedDesc = new ArrayList<>(toolDesc);
+        sortedDesc.sort(Collections.reverseOrder());
+        assertEquals(sortedDesc, toolDesc);
+
         page.waitForTimeout(4000);
 
 
