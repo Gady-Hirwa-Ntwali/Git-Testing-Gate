@@ -1,9 +1,7 @@
 import com.microsoft.playwright.*;
 import com.microsoft.playwright.options.SelectOption;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -11,7 +9,7 @@ import java.util.List;
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 
-public class SortTools {
+public class SortToolsTest {
 
     @Test
     public void SortFunctionality(){
