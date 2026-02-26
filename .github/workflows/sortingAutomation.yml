@@ -37,6 +37,7 @@ jobs:
       # Run Maven tests (this will execute your Playwright Java tests)
       - name: Run Maven tests
         run: mvn test
+        working-directory: SortingFunctionalityAutomation
 
       # Upload Playwright report if generated
       - name: Upload Playwright report
