@@ -9,7 +9,6 @@
    git clone https://github.com/Gady-Hirwa-Ntwali/Git-Testing-Gate.git
 
 3. Create a new branch named dev, switch to it, and push it to the remote repository
-
    git checkout -b dev
    git push -u origin dev
 
