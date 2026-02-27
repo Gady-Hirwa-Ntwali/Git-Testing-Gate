@@ -18,13 +18,17 @@ public class SortToolsTest {
         Browser browser = playwright.chromium().launch(
                 new BrowserType.LaunchOptions().setHeadless(true)
         );
+        BrowserContext context = browser.newContext(new Browser.NewContextOptions()
+                .setUserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36")
+        );
 
-        Page page = browser.newPage();
+        Page page = context.newPage();
         page.navigate("https://practicesoftwaretesting.com/");
         page.waitForLoadState(LoadState.LOAD);
 
         //ascending order
-        page.waitForTimeout(5000);
+        page.waitForLoadState(LoadState.NETWORKIDLE);
+        page.waitForTimeout(4000);
         Locator sortTools = page.locator("select[aria-label='sort']");
         sortTools.selectOption(new SelectOption().setValue("name,asc"));
         sortTools.click();
