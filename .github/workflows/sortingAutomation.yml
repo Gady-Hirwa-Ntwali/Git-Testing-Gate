@@ -24,7 +24,7 @@ jobs:
 
       - name: Install Playwright dependencies
         run: npx playwright install-deps
-      - name: nstall Playwright browsers
+      - name: Install Playwright browsers
         run: npx playwright install
 
       - name: Install dependencies
