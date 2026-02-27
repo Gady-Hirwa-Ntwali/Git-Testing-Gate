@@ -4,9 +4,15 @@ on:
   push:
     branches:
       - ft/pipeline
+      - main
+      - dev
+      - ft/setup
   pull_request:
     branches:
       - ft/pipeline
+      - main
+      - dev
+      - ft/setup
 
 jobs:
   test:
