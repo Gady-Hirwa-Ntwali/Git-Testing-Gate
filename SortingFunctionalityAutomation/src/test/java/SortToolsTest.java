@@ -22,7 +22,7 @@ public class SortToolsTest {
         page.navigate("https://practicesoftwaretesting.com/");
 
         //ascending order
-        page.waitForSelector("[data-test='sort']");
+        page.waitForTimeout(5000);
         Locator sortTools = page.locator("[data-test='sort']");
         sortTools.selectOption(new SelectOption().setValue("name,asc"));
         sortTools.click();
