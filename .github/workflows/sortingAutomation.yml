@@ -23,11 +23,7 @@ jobs:
           java-version: '17'
 
       - name: Install Playwright dependencies
-        run: sudo apt-get update && sudo apt-get install -y \
-          libgtk-4-1 libgraphene-1.0-0 libevent-2.1-7 libopus0 \
-          gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-libav \
-          libflite1 libavif16 libharfbuzz-icu0 libwayland-server0 libmanette-0.2-0 \
-          libhyphen0 libsecret-1-0 libwoff1 libgles2 libx264-163
+        run: npx playwright install-deps
 
       - name: Install dependencies
         run: mvn install -DskipTests
