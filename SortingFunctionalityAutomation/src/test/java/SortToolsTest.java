@@ -26,7 +26,7 @@ public class SortToolsTest {
         page.navigate("https://practicesoftwaretesting.com/");
         page.waitForLoadState(LoadState.LOAD);
 
-        //ascending order
+        //ascending order.
         page.waitForLoadState(LoadState.NETWORKIDLE);
         page.waitForTimeout(4000);
         Locator sortTools = page.locator("select[aria-label='sort']");
