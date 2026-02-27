@@ -16,7 +16,6 @@
 
    git checkout -b ft/setup
    Switched to a new branch 'ft/setup'
-6. Add a new file called test.java, include meaningful placeholder logic or comments, stage it, and commit using a well-structured commit message.
    
    
   
