@@ -25,7 +25,7 @@ jobs:
       - name: Install Playwright dependencies
         run: npx playwright install-deps
       - name: Install Playwright browsers
-        run: npx playwright install
+        run: npx playwright install chromium
 
       - name: Install dependencies
         run: mvn install -DskipTests
