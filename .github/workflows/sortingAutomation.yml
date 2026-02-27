@@ -16,14 +16,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up JDK 17
+      - name: Set up JDK 25
         uses: actions/setup-java@v3
         with:
           distribution: temurin
-          java-version: '17'
+          java-version: '25'
 
       - name: Install dependencies
         run: mvn install -DskipTests
+        working-directory: SortingFunctionalityAutomation
 
       - name: Run tests
         run: mvn test
