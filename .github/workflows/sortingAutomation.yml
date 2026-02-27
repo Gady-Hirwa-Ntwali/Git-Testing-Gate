@@ -24,6 +24,8 @@ jobs:
 
       - name: Install Playwright dependencies
         run: npx playwright install-deps
+      - name: nstall Playwright browsers
+        run: npx playwright install
 
       - name: Install dependencies
         run: mvn install -DskipTests
