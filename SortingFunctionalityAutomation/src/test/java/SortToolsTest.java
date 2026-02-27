@@ -1,4 +1,5 @@
 import com.microsoft.playwright.*;
+import com.microsoft.playwright.options.LoadState;
 import com.microsoft.playwright.options.SelectOption;
 import org.testng.annotations.Test;
 
@@ -20,6 +21,7 @@ public class SortToolsTest {
 
         Page page = browser.newPage();
         page.navigate("https://practicesoftwaretesting.com/");
+        page.waitForLoadState(LoadState.LOAD);
 
         //ascending order
         page.waitForTimeout(5000);
