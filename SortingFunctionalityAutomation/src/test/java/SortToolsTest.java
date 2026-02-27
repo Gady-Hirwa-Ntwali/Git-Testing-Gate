@@ -25,7 +25,7 @@ public class SortToolsTest {
 
         //ascending order
         page.waitForTimeout(5000);
-        Locator sortTools = page.locator("[data-test='sort']");
+        Locator sortTools = page.locator("select[aria-label='sort']");
         sortTools.selectOption(new SelectOption().setValue("name,asc"));
         sortTools.click();
 
