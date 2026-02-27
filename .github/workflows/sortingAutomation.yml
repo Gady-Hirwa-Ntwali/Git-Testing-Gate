@@ -2,9 +2,11 @@ name: Sorting Automation Test
 
 on:
   push:
-    branches: [ ft/pipeline, main, dev, ft/setup ]
+    branches:
+      - ft/pipeline
   pull_request:
-    branches: [ ft/pipeline, main, dev, ft/setup ]
+    branches:
+      - ft/pipeline
 
 jobs:
   test:
@@ -15,18 +17,18 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up JDK 25
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v3
         with:
-          distribution: microsoft
+          distribution: temurin
           java-version: '25'
-          cache: maven
+
+      - name: Install Playwright dependencies
+        run: npx playwright install-deps
+      - name: Install Playwright browsers
+        run: npx playwright install chromium
 
       - name: Install dependencies
-        run: mvn clean install -DskipTests
-        working-directory: SortingFunctionalityAutomation
-
-      - name: Install Playwright Browsers
-        run: mvn exec:java -e -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install --with-deps"
+        run: mvn install -DskipTests
         working-directory: SortingFunctionalityAutomation
 
       - name: Run tests
