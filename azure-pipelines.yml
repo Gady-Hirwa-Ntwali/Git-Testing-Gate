@@ -50,3 +50,9 @@ jobs:
       inputs:
         mavenPomFile: 'SortingFunctionalityAutomation/pom.xml'
         goals: 'test'
+
+    - task: PublishTestResults@2
+      displayName: 'Publish Maven test results'
+      inputs:
+        testResultsFiles: '**/target/surefire-reports/*.xml'
+        testRunTitle: 'Maven Tests'
